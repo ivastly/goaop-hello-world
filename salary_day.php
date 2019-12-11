@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
 
+use Ivastly\GoAopHelloWorld\Aop\ApplicationAspectKernel;
 use Ivastly\GoAopHelloWorld\BankingSystem\Bank;
 use League\CLImate\CLImate;
 
