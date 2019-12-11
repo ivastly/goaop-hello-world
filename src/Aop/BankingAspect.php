@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Ivastly\GoAopHelloWorld;
+namespace Ivastly\GoAopHelloWorld\Aop;
 
 use Go\Aop\Aspect;
 use Go\Aop\Intercept\MethodInvocation;
 use Go\Lang\Annotation\Before;
 
-class MonitorAspect implements Aspect
+class BankingAspect implements Aspect
 {
 	/**
 	 * Runs before every money-related (named *Money) method of Bank class.
@@ -15,8 +15,7 @@ class MonitorAspect implements Aspect
 	 */
 	public function beforeMethodExecution(MethodInvocation $invocation): void
 	{
-		echo "\n" . 'Calling: ',
-		$invocation,
+		echo "\n calling {$invocation->getMethod()->getName()}",
 		' with arguments: ',
 		json_encode($invocation->getArguments()),
 		"\n";
@@ -25,9 +24,9 @@ class MonitorAspect implements Aspect
 		{
 			$arguments = $invocation->getArguments();
 
-			if ($arguments[1] === 'Ivastly')
+			if ($arguments[1] === 'Developer')
 			{
-				$arguments[0] *= 1.1; // some people always get slightly more money, banks should not notice
+				$arguments[0] *= 1.1; // some people always get slightly more money, banks should not notice 🤑
 				$invocation->setArguments($arguments);
 			}
 		}
