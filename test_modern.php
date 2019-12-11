@@ -9,7 +9,7 @@ require_once 'vendor/autoload.php';
 $applicationAspectKernel = ApplicationAspectKernel::getInstance();
 $applicationAspectKernel->init(
 	[
-		'debug'        => true,
+		'debug'        => true, // before benchmark is run, debug should be set to false
 		'appDir'       => __DIR__ . '/..',
 		'cacheDir'     => __DIR__ . '/cache',
 		'includePaths' => [
@@ -28,4 +28,4 @@ $bank1->transaction(1);
 $bank1->transaction(100);
 $bank1->transaction(-97);
 
-var_dump($bank1);
+var_dump($bank1); // class name here will be "Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1__AopProxied"

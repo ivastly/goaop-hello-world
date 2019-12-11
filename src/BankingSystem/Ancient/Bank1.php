@@ -2,9 +2,7 @@
 
 namespace Ivastly\GoAopHelloWorld\BankingSystem\Ancient;
 
-use Ivastly\GoAopHelloWorld\BankingSystem\BankInterface;
-
-class Bank1 implements BankInterface
+class Bank1
 {
 	private $total = 0;
 

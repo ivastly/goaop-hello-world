@@ -4,14 +4,14 @@ namespace Ivastly\GoAopHelloWorld\Aop;
 
 use Go\Aop\Aspect;
 use Go\Aop\Intercept\MethodInvocation;
-use Go\Lang\Annotation\Before;
+use Go\Lang\Annotation\Around;
 
 class BankingAspect implements Aspect
 {
 	/**
 	 * Runs instead of transaction() method in Modern\Bank classes. Result is the same.
 	 *
-	 * @Before("execution(public Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1->transaction(*))")
+	 * @Around("execution(public Ivastly\GoAopHelloWorld\BankingSystem\Modern\*->transaction(*))")
 	 */
 	public function beforeMethodExecution(MethodInvocation $invocation): void
 	{
@@ -20,6 +20,6 @@ class BankingAspect implements Aspect
 		json_encode($invocation->getArguments()),
 		"\n";
 
-		$invocation->getThis()->transaction($invocation->getArguments()[0]);
+		$invocation->getThis()->_realTransaction($invocation->getArguments()[0]);
 	}
 }

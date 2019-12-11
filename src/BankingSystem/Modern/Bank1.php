@@ -2,16 +2,15 @@
 
 namespace Ivastly\GoAopHelloWorld\BankingSystem\Modern;
 
-use Ivastly\GoAopHelloWorld\BankingSystem\BankInterface;
 
 /**
- * This class is the same as its vis-a-vis from Ancient namespace, but transaction() is called inside an aspect.
+ * This class is the same as its vis-a-vis from Ancient namespace, but calculation is done inside an aspect.
  */
-class Bank1 implements BankInterface
+class Bank1
 {
 	private $total = 0;
 
-	public function transaction(int $amount): void
+	public function _realTransaction(int $amount): void // this method will be called from aspect
 	{
 		// do $this->total += $amount, but very carefully, one by one
 		for ($i = 0, $iterations = abs($amount); $i < $iterations; ++$i)
@@ -39,5 +38,9 @@ class Bank1 implements BankInterface
 			}
 		}
 	}
+
+	public function transaction(int $amount)
+	{
+	} // this is just a stub to avoid 'Call to undefined method' error. Execution will be intercepted by aspect, and _realTransaction will be called
 }
 
