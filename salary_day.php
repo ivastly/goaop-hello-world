@@ -10,6 +10,7 @@ require_once 'vendor/autoload.php';
 $applicationAspectKernel = ApplicationAspectKernel::getInstance();
 $applicationAspectKernel->init(
 	[
+		'debug'        => true,
 		'appDir'       => __DIR__ . '/..',
 		'cacheDir'     => __DIR__ . '/cache',
 		'includePaths' => [
