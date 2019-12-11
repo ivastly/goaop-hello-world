@@ -1,0 +1,16 @@
+{
+  "name": "ivastly/goaop-hello-world",
+  "description": "Hello world for goaop/framework library",
+  "type": "project",
+  "require": {
+    "php": "^7.1",
+    "goaop/framework": "^2.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ivastly\\GoAopHelloWorld\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "minimum-stability": "stable"
+}
