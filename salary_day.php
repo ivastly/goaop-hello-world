@@ -6,7 +6,7 @@ use League\CLImate\CLImate;
 require_once 'vendor/autoload.php';
 
 /* Initialize AOP engine */
-/*$applicationAspectKernel = ApplicationAspectKernel::getInstance();
+$applicationAspectKernel = ApplicationAspectKernel::getInstance();
 $applicationAspectKernel->init(
 	[
 		'appDir'       => __DIR__ . '/..',
@@ -15,7 +15,7 @@ $applicationAspectKernel->init(
 			__DIR__ . '/src',
 		],
 	]
-);*/
+);
 /* --- */
 
 $climate = new CLImate();
