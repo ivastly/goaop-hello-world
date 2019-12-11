@@ -28,8 +28,7 @@ Now is the salary day.
 We are going to withdraw money from our company's bank account and send the money to our personal accounts!"
 );
 
-$bank->withdrawMoney(1000, 'Docler Holding (https://doclerholding.recruitee.com/)');
-
+$bank->withdrawMoney(1000, 'Docler Holding');
 $bank->sendMoney(200, 'John');
 $bank->sendMoney(200, 'Developer');
 $bank->sendMoney(600, 'Miranda');

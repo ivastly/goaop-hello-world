@@ -11,4 +11,4 @@ php salary_day.php
 ```
 
 # More info
-This is a part of [medium article](medium.com) 
+This is a part of [medium article](https://medium.com) 
