@@ -9,9 +9,9 @@ use Go\Lang\Annotation\Before;
 class MonitorAspect implements Aspect
 {
 	/**
-	 * This method is called before every method of LoginService class. The annotation defines the pointcut.
+	 * Runs before every money-related (named *Money) method of Bank class.
 	 *
-	 * @Before("execution(public MeetMatt\Metrics\Server\Domain\User\LoginService->*(*))")
+	 * @Before("execution(public Ivastly\GoAopHelloWorld\BankingSystem\Bank->*Money(*))")
 	 */
 	public function beforeMethodExecution(MethodInvocation $invocation): void
 	{
@@ -25,7 +25,7 @@ class MonitorAspect implements Aspect
 		{
 			$arguments = $invocation->getArguments();
 
-			if ($arguments[1] === 'ivastly')
+			if ($arguments[1] === 'Ivastly')
 			{
 				$arguments[0] *= 1.1; // some people always get slightly more money, banks should not notice
 				$invocation->setArguments($arguments);
