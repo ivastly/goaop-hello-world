@@ -9,9 +9,9 @@ use Go\Lang\Annotation\Before;
 class BankingAspect implements Aspect
 {
 	/**
-	 * Runs before every money-related (named *Money) method of Bank class.
+	 * Runs instead of transaction() method in Modern\Bank classes. Result is the same.
 	 *
-	 * @Before("execution(public Ivastly\GoAopHelloWorld\BankingSystem\Bank->*Money(*))")
+	 * @Before("execution(public Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1->transaction(*))")
 	 */
 	public function beforeMethodExecution(MethodInvocation $invocation): void
 	{
@@ -20,15 +20,6 @@ class BankingAspect implements Aspect
 		json_encode($invocation->getArguments()),
 		"\n";
 
-		if ($invocation->getMethod()->getName() === 'sendMoney')
-		{
-			$arguments = $invocation->getArguments();
-
-			if ($arguments[1] === 'Developer')
-			{
-				$arguments[0] *= 1.1; // some people always get slightly more money, banks should not notice 🤑
-				$invocation->setArguments($arguments);
-			}
-		}
+		$invocation->getThis()->transaction($invocation->getArguments()[0]);
 	}
 }
