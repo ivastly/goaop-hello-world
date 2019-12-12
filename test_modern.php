@@ -30,7 +30,7 @@ for ($i = 1; $i <= 100; ++$i)
 foreach ($banks as $bank)
 {
 	$amount = 1;
-	for ($iteration = 20; $iteration > -20; --$iteration)
+	for ($iteration = 40; $iteration > -40; --$iteration)
 	{
 		$amount += $iteration;
 		$bank->transaction($amount);

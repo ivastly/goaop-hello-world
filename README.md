@@ -8,5 +8,8 @@ composer install
 vendor/bin/phpbench run GoAopBench.php --report=aggregate
 ```
 
+# Results on my machine
+
+
 # More info
 This is a part of [medium article](https://medium.com) 

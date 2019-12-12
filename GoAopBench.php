@@ -5,25 +5,19 @@ use PhpBench\Benchmark\Metadata\Annotations\OutputTimeUnit;
 use PhpBench\Benchmark\Metadata\Annotations\Revs;
 use PhpBench\Benchmark\Metadata\Annotations\Warmup;
 
+/**
+ * @Revs(100)
+ * @Iterations(4)
+ * @Warmup(2)
+ * @OutputTimeUnit("milliseconds", precision=1)
+ */
 class GoAopBench
 {
-	/**
-	 * @Revs(100)
-	 * @Iterations(3)
-	 * @Warmup(2)
-	 * @OutputTimeUnit("seconds", precision=3)
-	 */
 	public function benchOriginal(): void
 	{
 		require 'test_original.php';
 	}
 
-	/**
-	 * @Revs(100)
-	 * @Iterations(3)
-	 * @Warmup(2)
-	 * @OutputTimeUnit("seconds", precision=3)
-	 */
 	public function benchGoAop(): void
 	{
 		require 'test_modern.php';
