@@ -21,7 +21,7 @@ $applicationAspectKernel->init(
 /* --- */
 
 $banks = [];
-for ($i = 1; $i <= 100; ++$i)
+for ($i = 1; $i <= 1000; ++$i)
 {
 	$className = "Ivastly\\GoAopHelloWorld\\BankingSystem\\Modern\\Bank$i";
 	$banks []  = new $className();
