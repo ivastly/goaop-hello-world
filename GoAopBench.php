@@ -6,7 +6,7 @@ use PhpBench\Benchmark\Metadata\Annotations\Revs;
 use PhpBench\Benchmark\Metadata\Annotations\Warmup;
 
 /**
- * @Revs(100)
+ * @Revs(10)
  * @Iterations(4)
  * @Warmup(2)
  * @OutputTimeUnit("milliseconds", precision=1)
