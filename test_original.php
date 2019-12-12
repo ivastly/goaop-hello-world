@@ -1,16 +1,24 @@
 <?php declare(strict_types=1);
 
-use Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1;
+namespace Ivastly\GoAopHelloWorld\BankingSystem\Ancient;
 
 require_once 'vendor/autoload.php';
 
-$bank1 = new Bank1();
+$banks = [];
+for ($i = 1; $i <= 100; ++$i)
+{
+	$className = "Ivastly\\GoAopHelloWorld\\BankingSystem\\Ancient\\Bank$i";
+	$banks []  = new $className();
+}
 
-$bank1->transaction(1);
-$bank1->transaction(1);
-$bank1->transaction(1);
-$bank1->transaction(1);
-$bank1->transaction(100);
-$bank1->transaction(-97);
+foreach ($banks as $bank)
+{
+	$amount = 1;
+	for ($iteration = 20; $iteration > -20; --$iteration)
+	{
+		$amount += $iteration;
+		$bank->transaction($amount);
+	}
+}
 
-var_dump($bank1);
+//var_dump($banks[50]);

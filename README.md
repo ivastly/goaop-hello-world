@@ -1,13 +1,11 @@
 # Rationale
-This is a hello world of [Go!AOP](https://github.com/goaop/framework) framework for Aspect Oriented Programming
+This is a performance benchmark for [Go!AOP](https://github.com/goaop/framework) framework for Aspect Oriented Programming
 in PHP.
-It represents basic banking app which distributes money on salary day using PHP API of the Bank. 
-With AOP, this process is even more fun.
 
 # Usage
 ```bash
 composer install
-php salary_day.php
+vendor/bin/phpbench run GoAopBench.php --report=aggregate
 ```
 
 # More info

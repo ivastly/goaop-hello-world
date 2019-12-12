@@ -1,7 +1,8 @@
 <?php declare(strict_types=1);
 
+namespace Ivastly\GoAopHelloWorld\BankingSystem\Modern;
+
 use Ivastly\GoAopHelloWorld\Aop\ApplicationAspectKernel;
-use Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1;
 
 require_once 'vendor/autoload.php';
 
@@ -9,7 +10,7 @@ require_once 'vendor/autoload.php';
 $applicationAspectKernel = ApplicationAspectKernel::getInstance();
 $applicationAspectKernel->init(
 	[
-		'debug'        => true, // before benchmark is run, debug should be set to false
+		'debug'        => false, // before benchmark is run, debug should be set to false
 		'appDir'       => __DIR__ . '/..',
 		'cacheDir'     => __DIR__ . '/cache',
 		'includePaths' => [
@@ -19,13 +20,21 @@ $applicationAspectKernel->init(
 );
 /* --- */
 
-$bank1 = new Bank1();
+$banks = [];
+for ($i = 1; $i <= 100; ++$i)
+{
+	$className = "Ivastly\\GoAopHelloWorld\\BankingSystem\\Modern\\Bank$i";
+	$banks []  = new $className();
+}
 
-$bank1->transaction(1);
-$bank1->transaction(1);
-$bank1->transaction(1);
-$bank1->transaction(1);
-$bank1->transaction(100);
-$bank1->transaction(-97);
+foreach ($banks as $bank)
+{
+	$amount = 1;
+	for ($iteration = 20; $iteration > -20; --$iteration)
+	{
+		$amount += $iteration;
+		$bank->transaction($amount);
+	}
+}
 
-var_dump($bank1); // class name here will be "Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1__AopProxied"
+//var_dump($banks[50]); // class name here will be "Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1__AopProxied"

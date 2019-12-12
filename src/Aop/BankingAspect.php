@@ -15,10 +15,10 @@ class BankingAspect implements Aspect
 	 */
 	public function beforeMethodExecution(MethodInvocation $invocation): void
 	{
-		echo "\n calling {$invocation->getMethod()->getName()}",
+		/*echo "\n calling {$invocation->getMethod()->getName()}",
 		' with arguments: ',
 		json_encode($invocation->getArguments()),
-		"\n";
+		"\n";*/
 
 		$invocation->getThis()->_realTransaction($invocation->getArguments()[0]);
 	}
