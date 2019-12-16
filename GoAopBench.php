@@ -6,9 +6,9 @@ use PhpBench\Benchmark\Metadata\Annotations\Revs;
 use PhpBench\Benchmark\Metadata\Annotations\Warmup;
 
 /**
- * @Revs(10)
- * @Iterations(4)
- * @Warmup(2)
+ * @Revs(1)
+ * @Iterations(1)
+ * @Warmup(1)
  * @OutputTimeUnit("milliseconds", precision=1)
  */
 class GoAopBench
