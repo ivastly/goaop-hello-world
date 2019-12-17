@@ -1,0 +1,21 @@
+version: '3.0'
+
+services:
+  nginx:
+    image: nginx:1.17.5
+    ports:
+      - 8080:80
+    volumes:
+      - .:/app
+      - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: ./docker/php/
+    volumes:
+      - ./docker/php/config/custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini:ro
+      - .:/app
+    working_dir: /app
+
