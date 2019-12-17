@@ -4,7 +4,7 @@ namespace Ivastly\GoAopHelloWorld\BankingSystem\Modern;
 
 use Ivastly\GoAopHelloWorld\Aop\ApplicationAspectKernel;
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 /* Initialize AOP engine */
 $applicationAspectKernel = ApplicationAspectKernel::getInstance();
@@ -14,7 +14,7 @@ $applicationAspectKernel->init(
 		'appDir'       => __DIR__ . '/..',
 		'cacheDir'     => __DIR__ . '/cache',
 		'includePaths' => [
-			__DIR__ . '/src',
+			__DIR__ . '/../src',
 		],
 	]
 );
@@ -37,4 +37,4 @@ foreach ($banks as $bank)
 	}
 }
 
-//var_dump($banks[50]); // class name here will be "Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1__AopProxied"
+var_dump($banks[50]); // class name here will be "Ivastly\GoAopHelloWorld\BankingSystem\Modern\Bank1__AopProxied"

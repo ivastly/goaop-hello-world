@@ -2,7 +2,7 @@
 
 namespace Ivastly\GoAopHelloWorld\BankingSystem\Ancient;
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $banks = [];
 for ($i = 1; $i <= 100; ++$i)
@@ -21,4 +21,4 @@ foreach ($banks as $bank)
 	}
 }
 
-//var_dump($banks[50]);
+var_dump($banks[50]);
