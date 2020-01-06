@@ -5,18 +5,12 @@ in PHP. It uses `ab` tool and and nginx+php-fpm stack, to simulate real web app 
 # Usage
 ```bash
 docker run --rm -it -v $PWD:/app composer install
-
+ab -k -c 1 -n 100 http://localhost:8080/test_original.php
+ab -k -c 1 -n 100 http://localhost:8080/test_modern.php
 ```
 
 # Results on my machine
 
-#todo
-- try installing xdebug
-- run benchmarks on real server
-- populate 'results on my machine' section
-- update medium
-- mention Lisachenko
-- create issue on github
 
 # More info
 This is a part of [medium article](https://medium.com) 
