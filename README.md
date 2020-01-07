@@ -4,9 +4,15 @@ in PHP. It uses `ab` tool and and nginx+php-fpm stack, to simulate real web app 
 
 # Usage
 ```bash
+docker-compose up -d
+chmod 777 public/cache
 docker run --rm -it -v $PWD:/app composer install
-ab -k -c 1 -n 100 http://localhost:8080/test_original.php
-ab -k -c 1 -n 100 http://localhost:8080/test_modern.php
+
+ab -k -c 1 -n 10 http://127.0.0.1:8080/test_original.php # warm-up, ignore results
+ab -k -c 1 -n 1000 http://127.0.0.1:8080/test_original.php
+
+ab -k -c 1 -n 10 http://127.0.0.1:8080/test_modern.php # warm-up, ignore results
+ab -k -c 1 -n 1000 http://127.0.0.1:8080/test_modern.php
 ```
 
 # Results on my machine
