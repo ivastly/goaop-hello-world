@@ -2,6 +2,7 @@
 
 use PhpBench\Benchmark\Metadata\Annotations\BeforeMethods;
 use PhpBench\Benchmark\Metadata\Annotations\Iterations;
+use PhpBench\Benchmark\Metadata\Annotations\OutputTimeUnit;
 use PhpBench\Benchmark\Metadata\Annotations\Revs;
 use PhpBench\Benchmark\Metadata\Annotations\Warmup;
 
@@ -15,6 +16,7 @@ use PhpBench\Benchmark\Metadata\Annotations\Warmup;
  * @Iterations(1000)
  * @Warmup(10)
  * @BeforeMethods("init")
+ * @OutputTimeUnit("microseconds", precision=1)
  */
 class MethodCallBench
 {
