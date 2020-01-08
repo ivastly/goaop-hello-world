@@ -1,0 +1,5 @@
+{
+    "php_config": {
+        "opcache.enable_cli": 1
+    }
+}
