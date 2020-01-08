@@ -23,4 +23,4 @@ ab -k -c 1 -n 1000 http://127.0.0.1:8080/test_modern.php
 ![screenshot](https://github.com/ivastly/goaop-hello-world/raw/benchmark-docker/goaop-benchmark-docker-1000-aspects.png)
 
 # More info
-This is a part of [medium article](https://medium.com) 
+This is a part of [medium article](https://medium.com)
