@@ -1,6 +1,6 @@
 # Rationale
 This is a performance benchmark for [Go!AOP](https://github.com/goaop/framework) framework for Aspect Oriented Programming
-in PHP. It uses `ab` tool and and nginx+php-fpm stack to simulate real web application.
+in PHP. It uses `ab` tool and nginx+php-fpm stack to simulate real web application.
 
 # Usage
 ```bash
