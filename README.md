@@ -16,10 +16,10 @@ ab -k -c 1 -n 1000 http://127.0.0.1:8080/test_modern.php
 ```
 
 # Results on my machine
-###web app without aspects:
+### Web app without aspects:
 ![screenshot](https://github.com/ivastly/goaop-hello-world/raw/benchmark-docker/goaop-benchmark-docker-no-aspects.png)
 
-###same web app, with 1000 aspects:
+### Same web app, with 1000 aspects:
 ![screenshot](https://github.com/ivastly/goaop-hello-world/raw/benchmark-docker/goaop-benchmark-docker-1000-aspects.png)
 
 # More info
