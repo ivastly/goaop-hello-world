@@ -1,6 +1,6 @@
 # Rationale
 This is a performance benchmark for [Go!AOP](https://github.com/goaop/framework) framework for Aspect Oriented Programming
-in PHP. It uses `ab` tool and and nginx+php-fpm stack, to simulate real web app and make sure opcache is used.
+in PHP. It uses `ab` tool and and nginx+php-fpm stack to simulate real web application.
 
 # Usage
 ```bash
@@ -16,7 +16,11 @@ ab -k -c 1 -n 1000 http://127.0.0.1:8080/test_modern.php
 ```
 
 # Results on my machine
+###web app without aspects:
+![screenshot](https://github.com/ivastly/goaop-hello-world/raw/benchmark-docker/goaop-benchmark-docker-no-aspects.png)
 
+###same web app, with 1000 aspects:
+![screenshot](https://github.com/ivastly/goaop-hello-world/raw/benchmark-docker/goaop-benchmark-docker-1000-aspects.png)
 
 # More info
 This is a part of [medium article](https://medium.com) 
