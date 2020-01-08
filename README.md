@@ -9,7 +9,7 @@ vendor/bin/phpbench run GoAopBench.php --report=aggregate
 ```
 
 # Results on my machine
-![screenshot](https://github.com/ivastly/goaop-hello-world/raw/benchmark/aop-bench-1000classes.png)
+![screenshot](https://github.com/ivastly/goaop-hello-world/raw/bench-1000/aop-bench-1000classes.png)
 
 # More info
 This is a part of [medium article](https://medium.com) 
