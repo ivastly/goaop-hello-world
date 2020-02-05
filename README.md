@@ -11,7 +11,7 @@ php salary_day.php
 ```
 
 # More info
-This is a part of [medium article](https://medium.com) 
+This is a part of [medium article](https://medium.com/@ivastly/application-instrumentation-with-aspect-oriented-programming-in-php-18b1defa682) 
 
 # Benchmarks
 ## 100 aspects
